@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>源码学习</title>
+  <link rel="icon" href="favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="lib/css/vue.css">
+</head>
+<body>
+  <div id="app">Please wait...</div>
+  <script>
+    window.$docsify = {
+      name: '源码学习',
+      repo: '',
+      homepage: 'guide/welcome.md',
+      loadSidebar: true,
+      maxLevel: 4,
+      subMaxLevel: 5,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      search: {
+        paths: 'auto',
+        placeholder: '搜索 🔍',
+        noData: 'No Results! 😞',
+        depth: 6
+      }
+    }
+  </script>
+  <script src="lib/docsify.min.js"></script>
+  <script src="lib/plugins/search.min.js"></script>
+  <script src="lib/plugins/zoom-image.min.js"></script>
+</body>
+</html>

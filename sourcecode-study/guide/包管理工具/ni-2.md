@@ -211,9 +211,9 @@ let config: Config | undefined
 
 ##### 4、getConfig
 
-**第一步，**判断`config`是否有值。如果不存在，则调用`findUp`方法，查找`package.json`。
+**第一步，** 判断`config`是否有值。如果不存在，则调用`findUp`方法，查找`package.json`。
 
-**第二步：**从文件内容中获取`packageManager`的值。
+**第二步：** 从文件内容中获取`packageManager`的值。
 
 ```json
 {
@@ -230,7 +230,7 @@ let config: Config | undefined
 }
 ```
 
-**第三步：**使用正则表达式，将`packageManager`的值与`LOCKS`里面的值进行匹配，并得到`agent`和`version`。
+**第三步：** 使用正则表达式，将`packageManager`的值与`LOCKS`里面的值进行匹配，并得到`agent`和`version`。
 
 ```typescript
 export const LOCKS: Record<string, Agent> = {
@@ -244,11 +244,11 @@ export const LOCKS: Record<string, Agent> = {
 const [, agent, version] = packageManager.match(new RegExp(`^(${Object.values(LOCKS).join('|')})@(\d).*?$`)) || []
 ```
 
-**第四步：**判断`agent`是否有值，则构造得到`config`对象。它由两部分构成，首先是默认的属性，包括`defaultAgent`和`globalAgent`，然后判断`agent`是否严格等于`yarn`且版本号大于1，如果满足条件，则`defaultAgent`的值是`yarn@berry`，否则旧是`agent`的值。
+**第四步：** 判断`agent`是否有值，则构造得到`config`对象。它由两部分构成，首先是默认的属性，包括`defaultAgent`和`globalAgent`，然后判断`agent`是否严格等于`yarn`且版本号大于1，如果满足条件，则`defaultAgent`的值是`yarn@berry`，否则旧是`agent`的值。
 
-**第五步：**如果`agent`的值不存在，则传入`rcPath`，调用`fs.existsSync`方法，判断其是否存在。如果也不满足，则将`defaultConfig`的值赋值给`config`。
+**第五步：** 如果`agent`的值不存在，则传入`rcPath`，调用`fs.existsSync`方法，判断其是否存在。如果也不满足，则将`defaultConfig`的值赋值给`config`。
 
-**第六步：**如果调用`fs.existsSync`方法，判断其存在，则读取该文件里的内容，然后使用`ini.parse`进行解析之后赋值给`config`。
+**第六步：** 如果调用`fs.existsSync`方法，判断其存在，则读取该文件里的内容，然后使用`ini.parse`进行解析之后赋值给`config`。
 
 ```typescript
 config = Object.assign({}, defaultConfig, ini.parse(fs.readFileSync(rcPath, 'utf-8')))
@@ -328,19 +328,19 @@ export interface DetectOptions {
 
 ##### 3、定义`detect`方法
 
-**第一步，**先使用`findUp`方法查找`lock`文件的路径。
+**第一步，** 先使用`findUp`方法查找`lock`文件的路径。
 
-**第二步，**判断`lock`文件路径是否存在。如果存在，则使用`path.resolve`得到`package.json`的路径。如果不存在，则需要使用`findUp`方法查找`package.json`文件。
+**第二步，** 判断`lock`文件路径是否存在。如果存在，则使用`path.resolve`得到`package.json`的路径。如果不存在，则需要使用`findUp`方法查找`package.json`文件。
 
 ![ni-6](../../images/sourceCode-ni/ni-6.png)
 
-**第三步，**如果`packageJsonPath`值不为空，且文件存在，则尝试读取该文件。
+**第三步，** 如果`packageJsonPath`值不为空，且文件存在，则尝试读取该文件。
 
 ![ni-7](../../images/sourceCode-ni/ni-7.png)
 
-**第四步，**判断文件内容中的`packageManager`属性的值是否是`string`类型，如果是，则尝试使用`@`对其进行分隔，然后得到`name`和`version`。
+**第四步，** 判断文件内容中的`packageManager`属性的值是否是`string`类型，如果是，则尝试使用`@`对其进行分隔，然后得到`name`和`version`。
 
-**第五步，**对`name`和`version`进行判断。
+**第五步，** 对`name`和`version`进行判断。
 
 （1）名称是`yarn`且版本号大于1。
 
@@ -358,11 +358,11 @@ export interface DetectOptions {
 
 提示不支持的包管理器。
 
-**第六步，**如果`agent`的值不存在，但`lockPath`的值存在，则尝试从`LOCKS`中得到`agent`的值。
+**第六步，** 如果`agent`的值不存在，但`lockPath`的值存在，则尝试从`LOCKS`中得到`agent`的值。
 
-**第七步，**调用`utils`里面的`cmdExists`方法，验证包管理器是否安装。如果没有自动安装，则提示没有安装，然后显示一个安装的链接地址和确认提示选项。
+**第七步，** 调用`utils`里面的`cmdExists`方法，验证包管理器是否安装。如果没有自动安装，则提示没有安装，然后显示一个安装的链接地址和确认提示选项。
 
-**第八步，**调用`execaCommand`方法，执行全局安装的命令。
+**第八步，** 调用`execaCommand`方法，执行全局安装的命令。
 
 ![ni-8](../../images/sourceCode-ni/ni-8.png)
 

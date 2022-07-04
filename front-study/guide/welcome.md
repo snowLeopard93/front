@@ -42,6 +42,7 @@
     - [浏览器 README](guide/浏览器/README.md)
     - [Chrome（一）](guide/浏览器/Chrome（一）.md)
     - [Chrome（二）调试](guide/浏览器/Chrome（二）调试.md)
+    - [如何安装多个不同版本的Chrome](guide/浏览器/如何安装多个不同版本的Chrome.md)
 
 - webpack
     - [webpack README](guide/webpack/README.md)

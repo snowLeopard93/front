@@ -6,6 +6,9 @@
     - [vue events](guide/vue/events.md)
     - [vue-dev-server](guide/vue/vue-dev-server.md)     
 
+- nodejs
+    - [open](guide/nodejs/open.md)    
+
 - co
     - [co-1](guide/co/co-1.md)
 
@@ -29,5 +32,5 @@
     - [configstore](guide/yeoman/configstore.md) 
 
 - 包管理工具
-   - [ni](guide/包管理工具/ni.md) 
-   - [ni 补充](guide/包管理工具/ni-2.md) 
+   - [ni](guide/包管理工具/ni.md)  
+   - [ni 补充](guide/包管理工具/ni-2.md)

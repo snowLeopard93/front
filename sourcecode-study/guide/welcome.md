@@ -13,6 +13,9 @@
     - [vue events](guide/vue/events.md)
     - [vue-dev-server](guide/vue/vue-dev-server.md)     
 
+- nodejs
+    - [open](guide/nodejs/open.md)    
+
 - co
     - [co-1](guide/co/co-1.md)
 

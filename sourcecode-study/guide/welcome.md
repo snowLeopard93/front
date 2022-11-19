@@ -7,7 +7,7 @@
 当前目录结构为：
  ```markdown
 - 面试常考
-    - [remote-git-tags](guide/面试常考/remote-git-tags.md)
+    - [promisify](guide/面试常考/promisify.md)
     
 - vue
     - [vue-devtools](guide/vue-devtools/vue-devtools-1.md)

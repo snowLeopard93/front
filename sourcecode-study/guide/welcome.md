@@ -6,6 +6,9 @@
 
 当前目录结构为：
  ```markdown
+- 面试常考
+    - [remote-git-tags](guide/面试常考/remote-git-tags.md)
+    
 - vue
     - [vue-devtools](guide/vue-devtools/vue-devtools-1.md)
     - [vue3工具函数](guide/vue3工具函数/vue-next-1.md)

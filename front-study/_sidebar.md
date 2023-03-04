@@ -21,6 +21,7 @@
     - [Node README](guide/Node/README.md)
     - [常见问题处理](guide/Node/常见问题处理.md)
     - [npm包发布](guide/Node/npm包发布.md)
+    - [nvm安装及配置](guide/Node/nvm安装及配置.md)
 
 - 包管理工具
     - [包管理工具 README](guide/包管理工具/README.md)

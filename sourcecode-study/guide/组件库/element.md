@@ -363,6 +363,6 @@ const chineseName = process.argv[3] || componentname;
 
 1、Makefile
 
-#### 四、参考
+#### 五、参考
 
 [element new](https://github1s.com/ElemeFE/element/blob/dev/build/bin/new.js)

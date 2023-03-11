@@ -1,5 +1,7 @@
 ### 第15期 | element-new
 
+![【源码】element-new.png](../../images/思维导图/【源码】element-new.png)
+
 #### 一、初识element-new
 
 `element/build/bin/new.js`用于快速生成一个新组件。

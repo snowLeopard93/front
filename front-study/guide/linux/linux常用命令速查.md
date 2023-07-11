@@ -12,6 +12,10 @@ wget http://192.168.100.220:9020/images/resource/test.png
 rm -rf blog-master
 ```
 
+```
+rm -rf log-2023-07*
+```
+
 #### 3、解压zip `unzip`
 
 ```
@@ -140,4 +144,10 @@ free -m
 
 ```
 df -h
+```
+
+#### 4、查看磁盘空间占用情况
+
+```
+du -sh *
 ```

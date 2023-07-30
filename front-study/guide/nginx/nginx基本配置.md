@@ -1,5 +1,5 @@
 
-### 1、nginx-1.22.0\conf\nginx.conf
+### 1、nginx\conf\nginx.conf
 
 ```bash
 
@@ -58,4 +58,4 @@ http {
 
 ### 2、配置SSL
 
-将证书放到`nginx-1.22.0\conf\cert`文件夹下。
+将证书放到`nginx\conf\cert`文件夹下。

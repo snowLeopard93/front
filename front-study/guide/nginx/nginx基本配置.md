@@ -20,8 +20,6 @@ http {
     server_tokens off;
 
     server {
-        #server_name  47.112.246.205;
-
         listen 443 ssl;
         #配置HTTPS的默认访问端口为443。
         #如果未在此处配置HTTPS的默认访问端口，可能会造成Nginx无法启动。
@@ -41,7 +39,7 @@ http {
         server_tokens off;
 
         location / {
-            root         "D:\front-study\front\front-study";
+            root         "D:\study";
             index        index.html;
         }              
 

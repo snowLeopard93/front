@@ -155,6 +155,10 @@
     - [VisualStudioCode使用](guide/常用软件/VisualStudioCode使用.md)
     - [VisualStudioCode插件](guide/常用软件/VisualStudioCode插件.md)
 
+- Nginx
+    - [Nginx基本配置](guide/nginx/nginx基本配置.md)
+    - [Nginx常用命令](guide/nginx/nginx常用命令.md)
+
 - Photoshop
     - [Photoshop README](guide/Photoshop/README.md)
     - [PS入门笔记（一）](guide/Photoshop/PS入门笔记（一）.md)

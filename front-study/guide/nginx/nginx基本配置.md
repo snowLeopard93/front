@@ -59,3 +59,30 @@ http {
 ### 2、配置SSL
 
 将证书放到`nginx\conf\cert`文件夹下。
+
+### 3、根据标识跳转到不同应用程序
+
+修改`nginx.conf`文件
+
+```bash
+http {
+  server {
+    location /application {
+      set $is_mobile false;   #设置一个初始值
+ 
+      if ( $http_cookie ~* "ACCESS_TERMINAL=mobile" ) {    #判断匹配手机端
+        set $is_mobile true;
+      }
+      if ($http_user_agent ~* (android|ip(ad|hone|od)|kindle|blackberry|windows\s(ce|phone))) {    #匹配手机端类型
+        set $is_mobile true;
+      }
+      if ($is_mobile = true) {
+        root   "D:\application\app";
+        break;
+      }
+      root "D:\application\web";
+    }
+  }
+}
+
+```

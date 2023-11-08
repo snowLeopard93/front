@@ -1,7 +1,7 @@
 
 ### 一、常用属性
 
-`list-style`
+#### 1、list-style
 
 ```css
 /* 可用于有序列表 标序号 */
@@ -119,6 +119,12 @@ linear-gradient(direction, color1, stop1, color2, stop2,...);
     #4c1113
   );
 }
+```
+
+#### 4、背景图片设置成圆形
+
+```css
+border-radius: 50%
 ```
 
 ### 四、动画

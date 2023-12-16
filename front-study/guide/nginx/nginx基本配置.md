@@ -86,3 +86,19 @@ http {
 }
 
 ```
+
+
+### 4、反向代理到其他域名
+
+注意：api前后需要有/，proxy_pass域名后面也有/。
+
+```bash
+http {
+  server {
+    location /api/ {
+      proxy_pass https://algolia.net/;
+    }
+  }
+}
+```
+

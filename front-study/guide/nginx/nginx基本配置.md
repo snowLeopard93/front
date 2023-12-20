@@ -102,3 +102,36 @@ http {
 }
 ```
 
+### 5、配置开启gzip
+
+```bash
+http {
+  gzip  on;
+  gzip_buffers 16 8k;
+  gzip_comp_level 6;
+  gzip_http_version 1.1;
+  gzip_min_length 256;
+  gzip_proxied any;
+  gzip_vary on;
+  gzip_types
+  text/xml application/xml application/atom+xml application/rss+xml application/xhtml+xml image/svg+xml     text/javascript application/javascript application/x-javascript     text/x-json application/json application/x-web-app-manifest+json     text/css text/plain text/x-component     font/opentype application/x-font-ttf application/vnd.ms-fontobject     image/x-icon;
+  gzip_disable  "msie6";
+
+  server { 
+    gzip on;
+    gzip_buffers 32 4K;
+    gzip_comp_level 6;
+    gzip_min_length 100;
+    gzip_types application/javascript text/css text/xml;
+    gzip_disable "MSIE [1-6]\."; #配置禁用gzip条件，支持正则。此处表示ie6及以下不启用gzip（因为ie低版本不支持）
+    gzip_vary on;
+
+    location / {
+      gzip_http_version 1.0;
+      proxy_set_header Accept-Encoding gzip;
+    }
+  }
+}
+```
+
+

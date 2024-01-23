@@ -121,12 +121,6 @@ linear-gradient(direction, color1, stop1, color2, stop2,...);
 }
 ```
 
-#### 4、背景图片设置成圆形
-
-```css
-border-radius: 50%
-```
-
 ### 四、动画
 
 #### 1、线条效果
@@ -247,3 +241,18 @@ border-radius: 50%
 ![scale-down](../../../images/css/scale-down.png)
 
 参考：[CSS object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit)
+
+### 七、背景图片
+
+#### 1、背景图片设置成圆形
+
+```css
+border-radius: 50%
+```
+
+#### 2、背景图片撑满全屏
+
+```css
+background: url('test.png') no-repeat 100% 100%;
+background-size: 100% 100%;
+```

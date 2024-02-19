@@ -1,4 +1,6 @@
 
+## 一、基础配置
+
 ### 1、nginx\conf\nginx.conf
 
 ```bash
@@ -133,5 +135,101 @@ http {
   }
 }
 ```
+
+## 二、安全配置
+
+### 1、同源限制
+
+```bash
+http { 
+  add_header X-Frame-Options SAMEORIGIN;
+  server {
+    add_header X-Frame-Options SAMEORIGIN;
+  }
+}
+```
+
+### 2、告诉浏览器只能通过HTTPS访问当前资源
+
+```bash
+http { 
+  add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload";
+  server {
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload";
+  }
+}
+```
+
+### 3、禁用客户端的MIME类型嗅探行为
+
+```bash
+http { 
+  add_header X-Content-Type-Options "nosniff";
+  server {
+    add_header X-Content-Type-Options "nosniff";
+  }
+}
+```
+
+### 4、防止跨站脚本攻击
+
+```bash
+http { 
+  add_header X-Xss-Protection "1;mode=block";
+  server {
+    add_header X-Xss-Protection "1;mode=block";
+  }
+}
+```
+
+### 5、如果从 HTTPS 网址链接到 HTTP 网址，不发送Referer字段，其他情况只发送源信息。
+
+```bash
+http { 
+  add_header Referrer-Policy "strict-origin";
+  server {
+    add_header Referrer-Policy "strict-origin";
+  }
+}
+```
+
+### 6、禁止收录
+
+```bash
+http { 
+  add_header X-Robots-Tag  "noindex,nofollow";
+  server {
+    add_header X-Robots-Tag  "noindex,nofollow";
+  }
+}
+```
+
+### 7、禁止不安全的HTTP方法
+
+```bash
+http { 
+  server {
+     location /api {
+        limit_except GET POST {
+          deny all;
+        }
+     }
+  }
+}
+```
+
+### 8、关闭不必要的目录
+
+```bash
+http { 
+  server {
+     location /api {
+        autoindex off;
+     }
+  }
+}
+```
+
+
 
 
